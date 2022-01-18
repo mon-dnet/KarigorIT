@@ -14,7 +14,9 @@ import com.example.karigorit.R
 
 import com.example.karigorit.Results
 import java.util.*
+import javax.inject.Singleton
 
+@Singleton
 class UserListAdapter (var context: Context, var onuser : onuserCallback):RecyclerView.Adapter<UserListAdapter.CustomuserView>(){
 
     var userList :MutableList<Results> = ArrayList()

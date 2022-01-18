@@ -23,18 +23,20 @@ import com.example.karigorit.adapter.UserListAdapter
 import com.example.karigorit.http.ApiClient
 import com.example.karigorit.http.GetService
 import com.example.karigorit.utils.isNetworkAvailable
+import dagger.hilt.android.AndroidEntryPoint
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.create
+import javax.inject.Inject
 
-
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity(), UserListAdapter.onuserCallback {
 
-    var progressDialog: ProgressDialog? = null
+    lateinit var progressDialog: ProgressDialog
     lateinit var layout: LinearLayout
     lateinit var rv: RecyclerView
-    var adapter :UserListAdapter?=null
+    lateinit var adapter :UserListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
